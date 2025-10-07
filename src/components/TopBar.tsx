@@ -11,10 +11,7 @@ const TopBar = ({ onPhoneClick, onWhatsAppClick, pageTitle = "Plano de Negócios
   return (
     <section className="bg-secondary text-white py-3">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-3">
-          <div className="text-sm md:text-base font-medium">
-            {pageTitle}
-          </div>
+        <div className="flex justify-end items-center">
           <div className="hidden md:flex gap-3">
             <Button 
               variant="ghost" 
