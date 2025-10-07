@@ -20,8 +20,8 @@ const Header = () => {
     {
       title: "Institucional",
       items: [
-        { label: "Sobre Nós", href: "/sobre" },
-        { label: "Blog", href: "/blog" },
+        { label: "Nossa Empresa", href: "https://economica.org.br/nossa-empresa", external: true },
+        { label: "Blog", href: "https://economica.org.br/blog", external: true },
         { label: "Contato", href: "/contato" },
       ]
     }
@@ -59,6 +59,7 @@ const Header = () => {
                         key={itemIdx}
                         href={item.href}
                         className="block px-4 py-2 text-sm text-foreground hover:bg-muted hover:text-primary transition-colors"
+                        {...(item.external && { target: "_blank", rel: "noopener noreferrer" })}
                       >
                         {item.label}
                       </a>
@@ -82,6 +83,7 @@ const Header = () => {
                       key={itemIdx}
                       href={item.href}
                       className="block text-sm text-muted-foreground hover:text-primary transition-colors"
+                      {...(item.external && { target: "_blank", rel: "noopener noreferrer" })}
                     >
                       {item.label}
                     </a>
