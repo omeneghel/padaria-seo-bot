@@ -10,17 +10,18 @@ const Footer = ({ onPhoneClick, onWhatsAppClick }: FooterProps) => {
   const currentYear = new Date().getFullYear();
 
   const services = [
-    { label: "Plano de Negócios para Restaurantes", href: "/plano-de-negocios-para-restaurantes" },
-    { label: "Plano de Negócios para Cafeterias", href: "/plano-de-negocios-para-cafeterias" },
-    { label: "Plano de Negócios para Lojas", href: "/plano-de-negocios-para-lojas" },
+    { label: "Plano de Negócios", href: "/plano-de-negocios" },
+    { label: "Valuation", href: "/valuation" },
     { label: "Consultoria Empresarial", href: "/consultoria-empresarial" },
+    { label: "Análise de Mercado", href: "/analise-de-mercado" },
+    { label: "Planejamento Financeiro", href: "/planejamento-financeiro" },
   ];
 
   const institutional = [
-    { label: "Sobre Nós", href: "/sobre" },
-    { label: "Blog", href: "/blog" },
+    { label: "Nossa Empresa", href: "https://economica.org.br/nossa-empresa", external: true },
+    { label: "Blog", href: "https://economica.org.br/blog", external: true },
     { label: "Contato", href: "/contato" },
-    { label: "Política de Privacidade", href: "/privacidade" },
+    { label: "Política de Privacidade", href: "/politica-de-privacidade" },
   ];
 
   return (
@@ -76,11 +77,12 @@ const Footer = ({ onPhoneClick, onWhatsAppClick }: FooterProps) => {
             {/* Institutional */}
             <div>
               <h3 className="text-lg font-bold mb-4">Institucional</h3>
-              <ul className="space-y-2">
+            <ul className="space-y-2">
                 {institutional.map((item, idx) => (
                   <li key={idx}>
                     <a 
-                      href={item.href} 
+                      href={item.href}
+                      {...(item.external && { target: "_blank", rel: "noopener noreferrer" })}
                       className="text-sm text-white/80 hover:text-primary transition-colors"
                     >
                       {item.label}
@@ -135,7 +137,7 @@ const Footer = ({ onPhoneClick, onWhatsAppClick }: FooterProps) => {
       <section className="bg-muted py-6">
         <div className="container mx-auto px-4">
           <p className="text-center text-sm text-muted-foreground">
-            Plano de Negócios para Padarias - Consultoria Especializada ECONOMICA - UNICAMP
+            Consultoria Empresarial ECONOMICA - UNICAMP
           </p>
         </div>
       </section>
