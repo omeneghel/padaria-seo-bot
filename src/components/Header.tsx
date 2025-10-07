@@ -8,17 +8,10 @@ const Header = () => {
 
   const menuItems = [
     {
-      title: "Planos de Negócios",
-      items: [
-        { label: "Restaurantes", href: "/plano-de-negocios-para-restaurantes" },
-        { label: "Padarias", href: "/plano-de-negocios-para-padarias" },
-        { label: "Cafeterias", href: "/plano-de-negocios-para-cafeterias" },
-        { label: "Lojas de Varejo", href: "/plano-de-negocios-para-lojas" },
-      ]
-    },
-    {
       title: "Serviços",
       items: [
+        { label: "Plano de Negócios", href: "/plano-de-negocios" },
+        { label: "Valuation", href: "/valuation" },
         { label: "Consultoria Empresarial", href: "/consultoria-empresarial" },
         { label: "Análise de Mercado", href: "/analise-de-mercado" },
         { label: "Planejamento Financeiro", href: "/planejamento-financeiro" },
