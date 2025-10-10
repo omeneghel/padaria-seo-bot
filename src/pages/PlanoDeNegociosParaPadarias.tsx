@@ -10,6 +10,8 @@ import HeroSection from "@/components/HeroSection";
 import MainContent from "@/components/MainContent";
 import Footer from "@/components/Footer";
 
+import { restauranteConfig } from "@/config/nichos/plano-de-negocios-para-restaurante";
+
 const PlanoDeNegociosParaPadarias = () => {
   const [isWhatsAppModalOpen, setIsWhatsAppModalOpen] = useState(false);
   const [isPhoneModalOpen, setIsPhoneModalOpen] = useState(false);
@@ -34,7 +36,7 @@ const PlanoDeNegociosParaPadarias = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="lg:col-span-2">
-              <MainContent />
+              <MainContent nicho={restauranteConfig} />
             </div>
             <div className="lg:col-span-1">
               <div className="sticky top-24">

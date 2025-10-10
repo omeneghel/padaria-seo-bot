@@ -1,4 +1,4 @@
-restaurante: {
+export const restauranteConfig = {
     id: "restaurante",
     slug: "plano-de-negocios-para-restaurante",
     
@@ -83,4 +83,4 @@ restaurante: {
     ctaH3: "Pronto para Transformar restaurante em um Sucesso?",
     ctaP1: "Entre em contato conosco e solicite seu plano de negócios personalizado para restaurante.",
     ctaBotao: "Solicitar Plano de Negócios"
-  }
+  };
