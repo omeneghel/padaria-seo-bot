@@ -1,27 +1,14 @@
 import { CheckCircle2, TrendingUp, Target, Users, BarChart3, FileText } from "lucide-react";
 import { NichoConfig } from "@/config/nichos.config";
 
-/**
- * Interface das props do componente
- */
 interface MainContentProps {
   nicho: NichoConfig;
 }
 
-/**
- * Componente MainContent - VERSÃO DINÂMICA
- * 
- * Antes: Conteúdo hardcoded para padarias
- * Agora: Recebe dados do nicho via props e renderiza dinamicamente
- */
 const MainContent = ({ nicho }: MainContentProps) => {
   return (
     <article className="space-y-8">
       {/* ========== SEÇÃO: INTRODUÇÃO ========== */}
-      <header>
-        <h2 className="section-title">{nicho.introducaoH3}</h2>
-      </header>
-
       <section className="prose max-w-none">
         <div className="bg-primary/5 border-l-4 border-primary p-6 rounded-r-lg mb-8">
           <h3 className="text-2xl font-bold text-secondary mb-3">
@@ -45,7 +32,6 @@ const MainContent = ({ nicho }: MainContentProps) => {
               <div key={idx} className="flex gap-4 p-6 bg-card rounded-lg border border-border hover-lift">
                 <div className="flex-shrink-0">
                   <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center">
-                    {/* Ícones rotativos baseados no índice */}
                     {idx % 4 === 0 && <Target className="h-7 w-7 text-primary" />}
                     {idx % 4 === 1 && <BarChart3 className="h-7 w-7 text-primary" />}
                     {idx % 4 === 2 && <Users className="h-7 w-7 text-primary" />}
@@ -68,13 +54,15 @@ const MainContent = ({ nicho }: MainContentProps) => {
           </h3>
           
           {/* Introdução dos custos */}
-          <div className="bg-card p-6 rounded-lg border border-border mb-6">
-            {nicho.custosIntroducao.map((paragrafo, idx) => (
-              <p key={idx} className="text-muted-foreground leading-relaxed mb-4 last:mb-0">
-                {paragrafo}
-              </p>
-            ))}
-          </div>
+          {nicho.custosIntroducao && nicho.custosIntroducao.length > 0 && (
+            <div className="bg-card p-6 rounded-lg border border-border mb-6">
+              {nicho.custosIntroducao.map((paragrafo, idx) => (
+                <p key={idx} className="text-muted-foreground leading-relaxed mb-4 last:mb-0">
+                  {paragrafo}
+                </p>
+              ))}
+            </div>
+          )}
 
           {/* Lista de custos */}
           <div className="space-y-4 mb-6">
@@ -112,13 +100,15 @@ const MainContent = ({ nicho }: MainContentProps) => {
           </h3>
           
           {/* Introdução dos detalhes */}
-          <div className="bg-card p-6 rounded-lg border border-border mb-6">
-            {nicho.detalhesIntroducao.map((paragrafo, idx) => (
-              <p key={idx} className="text-muted-foreground leading-relaxed mb-4 last:mb-0">
-                {paragrafo}
-              </p>
-            ))}
-          </div>
+          {nicho.detalhesIntroducao && nicho.detalhesIntroducao.length > 0 && (
+            <div className="bg-card p-6 rounded-lg border border-border mb-6">
+              {nicho.detalhesIntroducao.map((paragrafo, idx) => (
+                <p key={idx} className="text-muted-foreground leading-relaxed mb-4 last:mb-0">
+                  {paragrafo}
+                </p>
+              ))}
+            </div>
+          )}
 
           {/* Lista de detalhes */}
           <div className="space-y-6 mb-6">
@@ -168,23 +158,25 @@ const MainContent = ({ nicho }: MainContentProps) => {
         </div>
 
         {/* ========== SEÇÃO: FAQ ========== */}
-        <div className="mb-8">
-          <h3 className="text-2xl font-bold text-secondary mb-6">
-            {nicho.faqH3}
-          </h3>
-          <div className="space-y-4">
-            {nicho.faq.map((item, idx) => (
-              <div key={idx} className="bg-card p-6 rounded-lg border border-border">
-                <h4 className="font-bold text-lg text-secondary mb-3">
-                  {item.pergunta}
-                </h4>
-                <p className="text-muted-foreground leading-relaxed">
-                  {item.resposta}
-                </p>
-              </div>
-            ))}
+        {nicho.faq && nicho.faq.length > 0 && (
+          <div className="mb-8">
+            <h3 className="text-2xl font-bold text-secondary mb-6">
+              {nicho.faqH3}
+            </h3>
+            <div className="space-y-4">
+              {nicho.faq.map((item, idx) => (
+                <div key={idx} className="bg-card p-6 rounded-lg border border-border">
+                  <h4 className="font-bold text-lg text-secondary mb-3">
+                    {item.pergunta}
+                  </h4>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {item.resposta}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
 
         {/* ========== SEÇÃO: CTA FINAL ========== */}
         <div className="bg-gradient-to-r from-primary to-primary/80 text-white p-8 rounded-lg text-center">
