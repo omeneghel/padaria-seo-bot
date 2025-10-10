@@ -63,7 +63,7 @@ export interface NichoConfig {
 }
 
 const nichos = {
-minimercado: {
+  minimercado: {
     id: "minimercado",
     slug: "plano-de-negocios-para-minimercado",
     
