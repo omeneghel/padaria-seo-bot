@@ -104,6 +104,10 @@ export const getNichoConfig = (slug: string): NichoConfig | undefined => {
   return Object.values(nichos).find(nicho => nicho.slug === slug);
 };
 
+export const getNichoConfigById = (id: string): NichoConfig | undefined => {
+  return nichos[id as keyof typeof nichos];
+};
+
 export const getAllNichos = (): NichoConfig[] => {
   return Object.values(nichos);
 };

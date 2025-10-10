@@ -16,7 +16,7 @@ import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import MainContentTemplate from "@/components/MainContentTemplate";
 import Footer from "@/components/Footer";
-import { getNichoConfig } from "@/config/nichos.config";
+import { getNichoConfigById } from "@/config/nichos.config";
 import { Helmet } from "react-helmet-async";
 
 // ============================================================================
@@ -37,7 +37,7 @@ const PlanoDeNegociosTemplate = ({ nichoId }: PlanoDeNegociosTemplateProps) => {
   const [isPhoneModalOpen, setIsPhoneModalOpen] = useState(false);
 
   // Carregar configuração do nicho
-  const config = getNichoConfig(nichoId);
+  const config = getNichoConfigById(nichoId);
 
   // Se a configuração não existir, mostrar erro
   if (!config) {
