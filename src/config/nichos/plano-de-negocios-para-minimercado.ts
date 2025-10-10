@@ -1,6 +1,6 @@
-minimercado: {
-    id: "minimercado",
-    slug: "plano-de-negocios-para-minimercado",
+export const minimercado = {
+  id: "minimercado",
+  slug: "plano-de-negocios-para-minimercado",
     
     // SEO
     metaTitle: "Plano de negócios para minimercado - ECONOMICA UNICAMP",
@@ -81,6 +81,6 @@ minimercado: {
     
     // CTA
     ctaH3: "Pronto para Transformar minimercado em um Sucesso?",
-    ctaP1: "Entre em contato conosco e solicite seu plano de negócios personalizado para minimercado.",
-    ctaBotao: "Solicitar Plano de Negócios"
-  }
+  ctaP1: "Entre em contato conosco e solicite seu plano de negócios personalizado para minimercado.",
+  ctaBotao: "Solicitar Plano de Negócios"
+};

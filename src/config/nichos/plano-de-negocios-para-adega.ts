@@ -1,7 +1,6 @@
-
-  adega: {
-    id: "adega",
-    slug: "plano-de-negocios-para-adega",
+export const adega = {
+  id: "adega",
+  slug: "plano-de-negocios-para-adega",
     
     nomeNegocio: "Adega",
     nomeNegocioSingular: "adega",
@@ -96,4 +95,4 @@
             "solucao": "Análise de custos e margem ideal para o negócio"
       }
 ]
-  }
+};
