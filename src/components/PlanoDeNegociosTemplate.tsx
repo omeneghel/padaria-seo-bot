@@ -14,7 +14,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import TopBar from "@/components/TopBar";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
-import MainContentTemplate from "@/components/MainContentTemplate";
+import MainContent from "@/components/MainContent";
 import Footer from "@/components/Footer";
 import { getNichoConfigById } from "@/config/nichos.config";
 import { Helmet } from "react-helmet-async";
@@ -109,7 +109,7 @@ const PlanoDeNegociosTemplate = ({ nichoId }: PlanoDeNegociosTemplateProps) => {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               {/* Coluna de conteúdo (2/3) */}
               <div className="lg:col-span-2">
-                <MainContentTemplate config={config} />  {/* {{VARIAVEL_CONFIG}} - Passa toda a configuração */}
+                <MainContent nicho={config} />  {/* {{VARIAVEL_CONFIG}} - Passa toda a configuração */}
               </div>
               
               {/* Coluna lateral com formulário (1/3) */}
